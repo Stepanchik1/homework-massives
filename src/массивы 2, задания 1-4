@@ -1,0 +1,66 @@
+public class Main {
+    public static void main(String[] args) {
+        //Задание 1
+        int[] arr = generateRandomArray();
+        int summ = 0;
+        for (int i = 0; i < arr.length; i++) {
+            summ = summ + arr[i];
+        }
+
+        System.out.println("Сумма составила " + summ + " рублей");
+
+    // или
+    int summ2 = 0;
+    int[] arrr = generateRandomArray();
+    for (int i :arrr) {
+        summ2 = summ2 + i;
+    }
+            System.out.println("Сумма составила "+summ+" рублей");
+    //Вывожу значения массива, чтоб было удобно
+        for (int i : arr) {
+            System.out.print(i+", ");}
+        System.out.print("\n");
+    //Задание 2
+        int a = 0;
+        int min = arr [a];
+        for (int k=0; k!=arr.length-1;a++) {
+            min = arr [a];
+        for (int i = 0; i<arr.length; i++) {
+            k=i;
+            if (min > arr [i]) {
+                k=0;
+                break;
+            }
+            }
+        }
+        a = 0;
+        int max = arr [0];
+        for (int k=0; k!=arr.length-1;a++) {
+            max = arr [a];
+            for (int i = 0; i<arr.length; i++) {
+                k=i;
+                if (max < arr [i]) {
+                    k=0;
+                    break;
+                }
+            }
+        }
+        System.out.println("Минимальное значение равно "+min+", а максимальное - "+max);
+        // Задание 3
+        double average = summ/arr.length;
+        System.out.println("Среднее значение составило "+average);
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i =reverseFullName.length-1; i>=0; i-- ) {
+            System.out.print(reverseFullName [i]);
+        }
+
+}
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+}
